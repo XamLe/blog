@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def send_email
-    user_mailer.send_email(  ).deliver
+    User_Mailer.send_email(  ).deliver
     redirect_to @post
   end
 

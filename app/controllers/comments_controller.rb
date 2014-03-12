@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
   def send_email
     user_mailer.send_email(  ).deliver
+    redirect_to @post
   end
 
   http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy

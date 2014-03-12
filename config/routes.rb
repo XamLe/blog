@@ -9,6 +9,8 @@ Blog::Application.routes.draw do
   end
   root to: "welcome#index"
 
+
+  get "send_email" => "comments#send_email" ,:as => "email_send"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

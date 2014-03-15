@@ -1,15 +1,12 @@
 class CommentsController < ApplicationController
 
-  def send_email
-    User_Mailer.send_email(  ).deliver
-    redirect_to post_path(@post)
-  end
 
   http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
   
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(params[:comment].permit(:commenter,:bodfy))
+    UserMailer.send_email(  ).deliver
     redirect_to post_path(@post)
   end
  

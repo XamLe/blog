@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			h1{background-color: green;
+				}
+		</style>
+	</head>
+	<body>
+		<h1>Comment</h1>
+		<%= @comment.commenter %> hat den post: "<%= @comment.post.title %>" wie folgt kommentiert:
+
+		<%= @comment.bodfy %>
+	</body>
+
+</html>

@@ -4,8 +4,8 @@ class UserMailer < ActionMailer::Base
 
 
 
-  def send_email
-  	@blabla = "Hi"
+  def send_email (comment)
+  	@comment = comment
 
   	mail to:"max.lewerenz@googlemail.com"
   end
